@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="/stylesheets/imc.css">
+    
+</head>
+
+<body>
+
+    <div class="nav-bar">
+        <style>
+              ul {
+          
+                  text-align: center;
+                  background-color: rgba(0, 0, 0, 0.26);
+                  padding: 20px;
+                  margin-top: 0px;
+              
+              }
+              
+              li {
+                  
+                  display:inline;
+              }
+              
+              a {
+                  margin: 15px;
+                  color: white;
+              }
+              .pill-nav a {
+                margin: 15px;
+                color: white;
+                text-align: center;
+                padding: 14px;
+                text-decoration: none;
+                font-size: 17px;
+                border-radius: 10px;
+            }
+
+            .pill-nav a:hover {
+                background-color: #ffffff42;
+                color: rgb(255, 255, 255);
+            }
+
+           
+            
+        </style>
+        <ul>
+            <div class="pill-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About</a></li>
+            </div>
+      </ul>
+    </div>
+
+    <section class="container">
+        <h1>Tabela IMC</h1>
+
+        <div id="legenda-imc">
+            
+            <strong>IMC</strong><br />
+            Menos do que 18,5 <br />
+            Entre 18,5 e 24,9 <br />
+            Entre 25 e 29,9   <br />
+            Entre 30 e 34,9   <br />
+            Entre 35 e 39,9   <br />
+            Mais do que 40    <br />
+            
+        </div>
+
+        <div id="legenda-result">
+            
+            <strong>Resultados</strong><br />
+            Abaixo do peso    <br />
+            Peso normal       <br />
+            Sobrepeso         <br />
+            Obesidade grau 1  <br />
+            Obesidade grau 2  <br />
+            Obesidade grau 3  <br />
+            
+        </div>
+
+        <h1>Calcule seu IMC</h1>
+
+        <form action="" class="form" method="get">
+
+            <label>Peso:</label>
+            <input type="number" step="0.01" class="Peso">
+
+            <label>Altura:</label>
+            <input type="number" step="0.01" class="Altura">
+
+            <button>Calcular</button>
+        </form>
+        <div class="resposta"></div>
+    </section>
+
+    <script src="javascripts/calculadora-imc.js"></script> 
+</body>
+
+</html>

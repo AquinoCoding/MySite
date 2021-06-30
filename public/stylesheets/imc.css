@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+    
+    --primary-color: rgb(68, 78, 78);
+    --second-color: rgb(106, 110, 110);
+    --botton-color: rgb(170, 173, 173);
+    
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+#legenda-result, #legenda-imc {
+    display: inline-block;
+    width: 50%;
+    margin-right: -3px; 
+}
+
+.container {
+    max-width: 640px;
+    margin: 50px auto;
+    background: var(--second-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.resposta {
+    background: rgb(194, 197, 197);
+    margin: 30px auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+
+form input:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+form button {
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;   
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 15px;
+}
+
+form button:hover {
+    background: var(--botton-color);
+}
+
+
