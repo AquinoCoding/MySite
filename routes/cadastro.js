@@ -5,15 +5,25 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const authConfig = require('../bin/auth.json');
 
-/*
-router.get('/', function(req, res) {
-    res.render('cadastro');
-});*/
 
-router.post('/cadastro', async(req, res) => {
+router.get('/cadastro', function(req, res) {
+    res.render('cadastro');
+});
+
+// Para gerar o token utilizasse ID, MD5 e a duração e de 1 dia
+function generateToken(params = {}) {
+    
+    return jwt.sign(params, authConfig.secret, {
+        expiresIn: 86400,
+    });
+}
+
+router.post('/recept', async(req, res) => {
 
     const { email } = req.body;
     const { username } = req.body;
+    const { pass } = req.body;
+    const { pass2 } = req.body;
 
     try{
         
@@ -23,11 +33,18 @@ router.post('/cadastro', async(req, res) => {
         else if (await User.findOne({ username })){
             return res.status(400).send({ error: 'Username já existente'});
         } 
+        
+        if (await)
 
         const user = await User.create(req.body);
         user.email = undefined;
+        user.pass = undefined;
 
-        return res.send({ user })
+        return res.send({ 
+            user,
+            token: generateToken({ id: user.id })
+         })
+        
     }
     catch (err) {
         return res.status(400).send({ error: 'Falha no Registro' });
@@ -47,14 +64,9 @@ router.post('/autenticacao', async(req, res) => {
     
     user.pass = undefined;
 
-    // Para gerar o token utilizasse ID, MD5 e a duração e de 1 dia
-
-    const token = jwt.sign({ id: user.id }, authConfig.secret, {
-        expiresIn: 86400,
-    });
-
-
-    res.send({ user, token });
+    res.send({ 
+        user, 
+        token: generateToken({ id: user.id }) });
 
 })
 
