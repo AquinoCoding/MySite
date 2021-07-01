@@ -5,29 +5,33 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var timeRouter = require('./routes/time');
 var imcRouter = require('./routes/imc');
-var cadRouter = require('./routes/cadastro');
+var cadRouter = require('./routes/cadastro')
 
 
-var app = express();
+const app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
+
+// Leitura de Json com express ao invés de body-parse
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/time', timeRouter);
 app.use('/imc', imcRouter);
-app.use('/cadastro', cadRouter);
+app.use('/auth', cadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
