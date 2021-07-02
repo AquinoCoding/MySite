@@ -1,0 +1,32 @@
+.pill-nav, #home, #news, #contact, #about  {
+    text-align: center; 
+}
+
+#log, #cad {
+    text-align: right;
+
+} 
+
+ul {
+    background-color: rgba(0, 0, 0, 0.26);
+    padding: 20px;
+    margin-top: 0px;
+}
+
+li {
+    display:inline;
+}
+
+.pill-nav a {
+    margin: 15px;
+    color: white;
+    padding: 14px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+.pill-nav a:hover {
+    background-color: #ffffff42;
+    color: rgb(255, 255, 255);
+}

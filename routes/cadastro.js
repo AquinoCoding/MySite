@@ -53,9 +53,10 @@ router.post('/recept', async(req, res) => {
 });
 
 router.post('/autenticacao', async(req, res) => {
+
     const { email, pass,  } = req.body;
 
-    const user = await User.findOne({  email }).select('+pass');
+    const user = await User.findOne({ email }).select('+pass');
 
     if (!user)
         return res.status(400).send('Usuario não encontrado');
@@ -65,10 +66,14 @@ router.post('/autenticacao', async(req, res) => {
     
     user.pass = undefined;
 
-    res.send({ 
-        user, 
-        token: generateToken({ id: user.id }) });
+    let con = {con:'ok'};
 
+    res.send({con,
+        user, 
+        token: generateToken({ id: user.id }),
+        
+     });
+     
 })
 
 module.exports = router;

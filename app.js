@@ -9,6 +9,7 @@ var timeRouter = require('./routes/time');
 var imcRouter = require('./routes/imc');
 var cadRouter = require('./routes/cadastro')
 var postsRouter = require('./routes/controller');
+var logRouter = require('./routes/login');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use('/time', timeRouter);
 app.use('/imc', imcRouter);
 app.use('/auth', cadRouter);
 app.use('/controllers', postsRouter);
+app.use('/login', logRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

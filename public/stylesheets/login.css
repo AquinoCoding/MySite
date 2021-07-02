@@ -21,6 +21,10 @@ body {
     line-height: 1.5em;
 }
 
+h2 {
+    
+}
+
 form label{
     display: block;
     width: 100%;
@@ -29,7 +33,7 @@ form label{
 
 form input {
     border: none;
-    width: 70%;
+    width: 50%;
     font-size: 24px;
     height: 50px;
     padding: 0 20px;
@@ -70,7 +74,11 @@ form button:hover {
     text-align: center;
 }
 
+#btn-newPass {
+    color: rgb(39, 38, 38);
+    text-decoration: none;
 
+}
 
 
 
