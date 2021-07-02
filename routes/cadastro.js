@@ -32,9 +32,10 @@ router.post('/recept', async(req, res) => {
         }
         else if (await User.findOne({ username })){
             return res.status(400).send({ error: 'Username já existente'});
-        } 
-        
-        if (await)
+        }
+
+        if (pass !== pass2)
+            return res.status(400).send({ error: 'Senhas não coincidem'});
 
         const user = await User.create(req.body);
         user.email = undefined;
