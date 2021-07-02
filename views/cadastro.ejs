@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,77 +9,34 @@
 
     <title>Cadastro</title>
 </head>
+
 <body>
-    <div class="nav-bar">
-        <style>
-              ul {
-          
-                  text-align: center;
-                  background-color: rgba(0, 0, 0, 0.26);
-                  padding: 20px;
-                  margin-top: 0px;
-              
-              }
-              
-              li {
-                  
-                  display:inline;
-              }
-              
-              a {
-                  margin: 15px;
-                  color: white;
-              }
-              .pill-nav a {
-                margin: 15px;
-                color: white;
-                text-align: center;
-                padding: 14px;
-                text-decoration: none;
-                font-size: 17px;
-                border-radius: 10px;
-            }
-
-            .pill-nav a:hover {
-                background-color: #ffffff42;
-                color: rgb(255, 255, 255);
-            }
-
-           
-            
-        </style>
-        <ul>
-            <div class="pill-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="">News</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">About</a></li>
-            </div>
-      </ul>
-    </div>
-    
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
     <section class="container">
         <form method="POST" action="/auth/recept">
+            <div id="lb-in">
+                <label>Nome</label>
+                <input type="text" name="name">
 
-            <label>Nome</label>
-            <input type="text" name="name">
+                <label>Username</label>
+                <input type="text" name="username">
 
-            <label>Username</label>
-            <input type="text" name="username">
+                <label>Email</label>
+                <input type="email" name="email">
 
-            <label>Email</label>
-            <input type="email" name="email">
-            
-            <label>Senha</label>
-            <input type="password" name="pass">
+                <label>Senha</label>
+                <input type="password" name="pass">
 
-            <label>Confirmação de Senha</label>
-            <input type="password" name="pass2">
+                <label>Confirmação de Senha</label>
+                <input type="password" name="pass2">
 
-            <button>Enviar</button>
-
+                <button>Enviar</button>
+            </div>
         </form>
     </section>
-    
+
 </body>
+
 </html>
