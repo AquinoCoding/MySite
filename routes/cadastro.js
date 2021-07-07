@@ -66,9 +66,7 @@ router.post('/autenticacao', async(req, res) => {
     
     user.pass = undefined;
 
-    let con = {con:'ok'};
-
-    res.send({con,
+    res.send({
         user, 
         token: generateToken({ id: user.id }),
         

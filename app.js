@@ -10,6 +10,8 @@ var imcRouter = require('./routes/imc');
 var cadRouter = require('./routes/cadastro')
 var postsRouter = require('./routes/controller');
 var logRouter = require('./routes/login');
+var sobRouter = require('./routes/about');
+var perfRouter = require('./routes/perfil');
 
 const app = express();
 
@@ -33,6 +35,8 @@ app.use('/imc', imcRouter);
 app.use('/auth', cadRouter);
 app.use('/controllers', postsRouter);
 app.use('/login', logRouter);
+app.use('/about', sobRouter);
+app.use('/perfil', perfRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
